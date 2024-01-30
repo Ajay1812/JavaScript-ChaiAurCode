@@ -10,8 +10,8 @@ let age = 23
 let isLoggedIn = false
 let state;
 
-// Number - 2 to power 52
-// bigInt
+// Number -> 2 to power 52
+// bigInt -> store large numbers
 // string -> '', ""
 // boolean -> true/false
 // null -> standalone value

@@ -32,8 +32,36 @@ const myFunc = function(){
     let name = myObj['name']
     return name
 }
-console.log(myFunc())
+// console.log(myFunc())
 
 
-console.log(typeof myFunc)
-console.log(typeof myObj)
+// console.log(typeof myFunc)
+// console.log(typeof myObj)
+
+
+//  ++++++++++++++++++++++++++++ Memory +++++++++++++++++++++++++++++++
+
+// Stack (premitive) -> return copy , Heap (non-primitve) -> return refernce
+
+let youtubeName = "NightFury"
+let anotherName = youtubeName
+anotherName = "CodeNFInite"
+
+console.log(youtubeName);
+console.log(anotherName);
+
+let userOne = {
+    name: "Ajay",
+    email: "a.kumar01c@gmail.com",
+    UPI: "6397xsaxa@ybl"
+}
+
+let userTwo = userOne
+
+// console.log(userOne);
+// console.log(userTwo);
+
+userTwo.email = "rohit.kumar@gmail.com"
+
+console.log(userOne)
+console.log(userTwo)

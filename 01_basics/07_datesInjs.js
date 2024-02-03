@@ -26,19 +26,25 @@ let myTimeStamp = Date.now()
 
 // console.log(Math.floor(Date.now()/1000)) // convert into seconds
 
-let newDate = new Date()
+// let newDate = new Date()
 // console.log(newDate.getDate()); 
 // console.log(newDate.getMonth() + 1); 
 // console.log(newDate.getDay()); // day start from 0 -> monday
 // console.log(newDate.getTime()); // time in miliseconds : 1706777240869
 
 // console.log(`${newDate.toLocaleDateString()} and the time is ${newDate.toTimeString()}`)
-
-let modifiedDate = newDate.toLocaleString('default', {
-    dateStyle:"long",
-})
-
-console.log(modifiedDate)
+function clock(){
+    let modifiedDate = new Date().toLocaleString('default', {
+        // dateStyle:"long",
+        timeStyle : "medium",
+        hourCycle:"h24"
+    })
+    console.clear()
+    console.log(modifiedDate)
+}
+// Timer -> 18:57:52 , 18:57:53, ---
+// clock()
+setInterval(clock, 1000)
 
 
 

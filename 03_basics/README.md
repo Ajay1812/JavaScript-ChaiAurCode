@@ -2,4 +2,5 @@
 
 #### Code Example:
 
-<img width="620" alt="Execution Context of JavaScript" src="https://github.com/Ajay1812/JavaScript-ChaiAurCode/assets/81603467/7c5afb53-79ef-48fd-aa99-f819f305e719">
+![Execution Context of JS](https://github.com/Ajay1812/JavaScript-ChaiAurCode/assets/81603467/594faa05-67bf-4950-99ab-7d0edcc1e42e)
+

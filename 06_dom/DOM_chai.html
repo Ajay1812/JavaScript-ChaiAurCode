@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur Code</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+
+    </div>
+</body>
+<script>
+    const parentDiv = document.querySelector('.parent')
+    // console.log(parentDiv)
+    // console.log(parentDiv.children) // return HTMLCollection
+    // console.log(parentDiv.children[1].outerHTML) 
+    // console.log(parentDiv.childNodes) // return nodelist
+
+    // for (let i = 0; i < parentDiv.children.length; i++) {
+    //     console.log(parentDiv.children[i].innerHTML)
+    // }
+
+    // Another Method
+    const parentArr = Array(parentDiv) // convert HTML Collection to Array
+    parentArr.forEach((item)=>(console.log(item.style.color = "orange")))
+
+    // console.log(parentDiv.firstElementChild.outerHTML)
+
+    const dayOne = document.querySelector('.day')
+    // console.log(dayOne.outerHTML)
+    // console.log(dayOne.parentElement.innerHTML)
+    // console.log(dayOne.nextElementSibling.innerHTML)
+
+    console.log(parentDiv.childNodes) // return Nodelist -> tree
+
+
+</script>
+</html>

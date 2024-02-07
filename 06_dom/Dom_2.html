@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM | Chai aur code</title>
+  </head>
+  <body style="background-color: #212121; color: white">
+    <div class="add-h1"></div>
+    <ul class="language">
+      <li>JavaScript</li>
+    </ul>
+  </body>
+  <script>
+    // justify-content: center;
+    // align-items: center;
+    // display: flex;
+    let myh1 = document.createElement("h1");
+    myh1.innerHTML = "Programming Languages";
+    myh1.style.color = "grey";
+    myh1.style.backgroundColor = "white";
+    myh1.style.borderRadius = "12px";
+    myh1.style.justifyContent = "center";
+    myh1.style.alignItems = "center";
+    myh1.style.display = "flex";
+
+    document.querySelector(".add-h1").append(myh1);
+    const langname = ["Python", "Ruby", "Cpp", "Java", "Swift"];
+    function addLanguage(langname) {
+      for (let i = 0; i < langname.length; i++) {
+        const li = document.createElement("li");
+        li.innerHTML = `${langname[i]}`;
+        li.style.color = "orange";
+        document.querySelector(".language").appendChild(li);
+      }
+      document.querySelector("li").style.color = "orange";
+    }
+    addLanguage(langname);
+
+    function addOptiLanguage(langName) {
+      const li = document.createElement("li");
+      li.appendChild(document.createTextNode(langName));
+      document.querySelector(".language").appendChild(li);
+    }
+    addOptiLanguage("golang");
+
+    // const arrowLi = (langName) => {
+    //   langName.map(() => {
+    //     const li = document.createElement("li");
+    //     li.appendChild(document.createTextNode(langName));
+    //     document.querySelector(".language").appendChild(li);
+    //   });
+    // };
+    // arrowLi(langname);
+
+    // Edit the value
+    const secondLang = document.querySelector("li:nth-child(2)");
+    // console.log(secondLang.outerHTML);
+    // secondLang.innerHTML = "Mojo";
+    const newLi = document.createElement("li");
+    newLi.textContent = "Mojo";
+    secondLang.replaceWith(newLi);
+
+    const firstlang = document.querySelector("li:nth-child(1)");
+    const newLi2 = document.createElement("li");
+    firstlang.outerHTML = "<h2>TypeScript</h2 >";
+
+    // remove
+    const lastLang = document.querySelector("li:last-child");
+    lastLang.remove();
+  </script>
+</html>

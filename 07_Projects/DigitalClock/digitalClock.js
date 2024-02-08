@@ -1,4 +1,4 @@
-const clock_div = document.querySelector("div");
+const clock_div = document.querySelector("span");
 
 function clock() {
   const time = new Date().toLocaleString("default", {

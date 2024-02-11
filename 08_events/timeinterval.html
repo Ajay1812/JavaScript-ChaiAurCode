@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TimeOut</title>
+  </head>
+  <body>
+    <h1>SetInterval</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    const say = function () {
+      console.log("Hello", Date.now());
+    };
+
+    let sayDate;
+    function startDate() {
+      sayDate = setInterval(say, 2000);
+      console.log("Start");
+    }
+
+    function stopDate() {
+      clearInterval(sayDate);
+      console.log("Stopped");
+    }
+
+    document.querySelector("#start").addEventListener("click", startDate);
+    document.querySelector("#stop").addEventListener("click", stopDate);
+  </script>
+</html>

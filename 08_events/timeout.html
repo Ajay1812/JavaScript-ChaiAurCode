@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TimeOut</title>
+  </head>
+  <body>
+    <h1>SetTimeout</h1>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    const say = function () {
+      console.log("Ajay");
+    };
+    const ChangeH1 = function () {
+      document.querySelector("h1").innerHTML = "setTIMEOUT & SetInterval";
+      document.querySelector("h1").style.backgroundColor = "grey";
+    };
+    const textChange = setTimeout(ChangeH1, 2000);
+
+    document.querySelector("#stop").addEventListener("click", () => {
+      clearInterval(textChange);
+      console.log("Stopped");
+    });
+  </script>
+</html>

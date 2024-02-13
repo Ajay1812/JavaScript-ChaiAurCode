@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XMLRequests</title>
+  </head>
+  <body>
+    <h3 id="user"></h3>
+    <div id="website"></div>
+    <button id="data">Get Data</button>
+  </body>
+  <script>
+    const reqURL = "https://api.github.com/users/ajay1812";
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", reqURL);
+    // console.log(xhr.readyState);
+    xhr.onreadystatechange = function () {
+      //   console.log(xhr.readyState);
+      if (xhr.readyState === 4) {
+        let data = JSON.parse(this.responseText); // convert string to json
+        console.log(data);
+        const userimage = document.querySelector("#data");
+        const userData = document.querySelector("#user");
+        const Website = document.querySelector("#website");
+        document.querySelector("#data").addEventListener("click", () => {
+          const username = data.login;
+          const userIMG = data.avatar_url;
+          const website_url = data.blog;
+          console.log(Website);
+          userimage.innerHTML = `<img src = ${userIMG}></img>`;
+          userData.innerHTML = `<h3>${username}</h3>`;
+          Website.innerHTML = `<div>Website : ${website_url}</div>`;
+        });
+      }
+    };
+    xhr.send();
+  </script>
+</html>

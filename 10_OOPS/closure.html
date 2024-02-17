@@ -6,10 +6,11 @@
     <title>Closure</title>
   </head>
   <body>
-    <button id="orange">Orange</button>
-    <button id="green">Green</button>
+    <!-- <button id="orange">Orange</button>
+    <button id="green">Green</button> -->
   </body>
   <script>
+    let colors = ["red", "green", "yellow", "grey", "orange"];
     function clickHandler(color) {
       //   document.body.style.backgroundColor = `${color}`;
       return function () {
@@ -17,7 +18,15 @@
         document.body.style.backgroundColor = `${color}`;
       };
     }
-    document.querySelector("#orange").onclick = clickHandler("orange");
-    document.querySelector("#green").onclick = clickHandler("green");
+    for (const color of colors) {
+      let btn = document.createElement("button");
+      btn.innerHTML = color;
+      btn.setAttribute("id", color);
+      document.body.appendChild(btn);
+    }
+    document.querySelectorAll("button").forEach((e) => {
+      console.log(e);
+      e.onclick = clickHandler(e.id);
+    });
   </script>
 </html>
